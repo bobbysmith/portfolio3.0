@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/bobbysmith
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://bobbysmith.io
+  * I am bobbysmith (https://keybase.io/bobbysmith) on keybase.
+  * I have a public key with fingerprint BDB6 09D7 7F9D D377 9ED4  6FBD FDAC C752 3293 EFA7
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010127f4838f105864eaaa3b5be0f276290e9dc477de867bfecb89241debcc9693c30a",
+            "fingerprint": "bdb609d77f9dd3779ed46fbdfdacc7523293efa7",
+            "host": "keybase.io",
+            "key_id": "fdacc7523293efa7",
+            "kid": "010127f4838f105864eaaa3b5be0f276290e9dc477de867bfecb89241debcc9693c30a",
+            "uid": "33e10b45f3a56717b31ddb610e92a519",
+            "username": "bobbysmith"
+        },
+        "service": {
+            "hostname": "bobbysmith.io",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1477621266,
+    "expire_in": 157680000,
+    "prev": "6718f31fe6f82c5562f0252fefd0054b05f89db3db7eaa499adc1a9f2c2b71ca",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.58
+Comment: https://keybase.io/crypto
+
+yMIoAnicrVJbSBVBGN5TpmV2QdJSEmp76aK1l7M7u+cohb0ImSEaCUWHnZ0Zz6Ke
+PZ5dLTPtRSnoQkQ9mFmQUVTYhbCsIC9p6YmiMCpNTbsohoQPSmJBzVo91WPzMsw/
+3/f9//fxty+YzUS7sra88l4+HXfA9aS1poTJi70dW85CE5WxnnK2AM9cuBBhy/YV
+GIj1sBzP8QIgbkVUCM9JiuzGmqaJUIKYIwKQBZXDKtLdACCsyAASrENFFdw8wlDX
+VVkVdZHT2GSWGIF8HAqGjIBNZSGCMqciAIiKkAiAipFbJhARpOk6kARRUEVMNECJ
+ftNyGHQ4qFl4vWHSGn34Zsb7B/4/z10yIyeKmOegWyKiJsmAB1DkEbXAUxFBk3jV
+AVo4FNCKsOPOhLDMKjJsP1uRzNJ6qaFjJ1rHy1+YX5aCIdM2dbOQfvltO+hxmHZZ
+0IHuwdD3W8QHjQCiSVJCKQ5ZhhlgPTxF6rbhqPLUjyzwgiwns3hv0Ahhn+EgJCAr
+HD1OG1xKJakHhYg8wTJRBF2SZIFwgiQQTBDHSW7ISURRERQRBDQ3t6pqSOc1lQi6
+AAGvO8FYuDhgsh7aydbyqaRl5Ac0uySE2Yq2ll0RjCuaiZwzy9kwJnre4j97Nzti
+LnP9YMOVE0nnMz+05VX2eye2TXdrdSvbu8nCot7CvO+1zzq2H1sS9dk7xFyczD8U
+87Kwpq3m1M5lLbsvvDi6tS8NTHt6KjeXvU9NaOoNx3/8Us8w3uKE8ajc3tynKUO1
+cdIxNTxy/dzhzH1taWvrMqaGsjcmhu83bmBvVIzkpDwfD0/NlYef3OzbceTOmdRJ
+5m6g4UFVeqO/03UO9q4Jbr01lNgaue1rQlNX9nEwunxNY/yqRwnfBmKqi1O7/I87
+crKWeta9vXZ2UycXX++913w041vSihdSXuj11exFgydvfBrueTjm6p9IT5k/Nri6
+adW7N1Zu6v66ZtR6q2og/CNu06XR6p8uVkg5
+=q+O4
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/bobbysmith
+
+==================================================================

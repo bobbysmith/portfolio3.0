@@ -31,16 +31,16 @@ body {
 h1 {
   margin: .5em;
   font-size: 3em;
-  color: #ffffff;
+  color: #fefefe;
 }
 
 a {
   transition: color 350ms ease;
-  color: #ffffff;
+  color: #fefefe;
 }
 
 a:hover {
-  color: #727272;
+  color: #b8c1c1;
 }
 
 .fa-2x {

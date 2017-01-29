@@ -1,14 +1,15 @@
 const background = document.querySelector('.background');
 const row = document.querySelector('.row');
-const ruleSet = document.querySelector('.rule-set');
+const ruleSet = document.querySelector('.rule');
+const newRuleButton = document.querySelector('.new-rule__button');
 const rulesIcon = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
 let ruleNumber;
 
 
-(function generateAutomata() {
+function generateAutomata() {
   ruleNumber = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
   background.innerHTML = '';
-  ruleSet.innerHTML = `The background is <a href="http://atlas.wolfram.com/01/01/${ruleNumber}/">cellular automata rule set ${ruleNumber}</a>.<br>Refresh for a new automata rule set.`;
+  ruleSet.innerHTML = `The background is <a href="http://atlas.wolfram.com/01/01/${ruleNumber}/">cellular automata rule ${ruleNumber}</a>.`;
 
   let row = document.createElement('div');
   row.setAttribute('class', 'row');
@@ -23,7 +24,7 @@ let ruleNumber;
   for (let i = 1; i < background.clientHeight / 8; i++) {
     duplicateRow();
   }
-})();
+};
 
 function numbertoBooleanArray(num) {
   let binary = Number(num).toString(2);
@@ -91,3 +92,7 @@ function toggleActive(cell, isActive) {
     cell.classList.add('inactive');
   }
 }
+
+
+generateAutomata();
+newRuleButton.addEventListener('click', generateAutomata);

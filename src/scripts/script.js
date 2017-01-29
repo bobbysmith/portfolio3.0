@@ -9,7 +9,7 @@ let ruleNumber;
 function generateAutomata() {
   ruleNumber = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
   background.innerHTML = '';
-  ruleSet.innerHTML = `The background is <a href="http://atlas.wolfram.com/01/01/${ruleNumber}/">cellular automata rule ${ruleNumber}</a>.`;
+  ruleSet.innerHTML = `The background is cellular automata <a href="http://atlas.wolfram.com/01/01/${ruleNumber}/">rule ${ruleNumber}</a>.`;
 
   let row = document.createElement('div');
   row.setAttribute('class', 'row');

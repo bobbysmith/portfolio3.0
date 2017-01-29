@@ -14,13 +14,13 @@ let ruleNumber;
   row.setAttribute('class', 'row');
   background.appendChild(row);
 
-  for(let i = 1; i < background.clientWidth / 4; i++) {
+  for(let i = 1; i < background.clientWidth / 8; i++) {
     let div = document.createElement('div');
     row.appendChild(div);
   }
 
   randomizeRow(row);
-  for (let i = 1; i < background.clientHeight / 4; i++) {
+  for (let i = 1; i < background.clientHeight / 8; i++) {
     duplicateRow();
   }
 })();

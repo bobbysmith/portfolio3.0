@@ -52,18 +52,21 @@ body {
   font-family: 'Office Code Pro', monospace;
 }
 
-.background {
-  height: 100vh;
+.container {
   overflow: hidden;
 }
 
+.background {
+  height: 100vh;
+}
+
 .row {
-  height: 4px;
+  height: 8px;
 }
 
 .row div {
-  height: 4px;
-  width: 4px;
+  height: 8px;
+  width: 8px;
   display: inline-block;
 }
 

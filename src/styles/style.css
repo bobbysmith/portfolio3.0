@@ -119,6 +119,7 @@ footer {
   line-height: 1.8;
   color: #b8c1c1;
   font-family: 'Office Code Pro', monospace;
+  min-width: 245px;
 }
 
 .new-rule__button {

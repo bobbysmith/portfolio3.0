@@ -111,10 +111,10 @@ a:hover {
   color: #b8c1c1;
 }
 
-footer {
+.automata {
   position: absolute;
-  bottom: 3%;
-  left: 5%;
+  top: 5%;
+  right: 5%;
   font-size: .5em;
   line-height: 1.8;
   color: #b8c1c1;
@@ -143,5 +143,13 @@ footer {
 
   .rule, .new-rule {
     font-size: .4em;
+  }
+}
+
+@media (max-width: 768px) {
+  .automata {
+    bottom: 3%;
+    left: 5%;
+    top: initial;
   }
 }

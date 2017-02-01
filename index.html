@@ -9,7 +9,7 @@
   <link rel="manifest" href="favicon/manifest.json">
   <link rel="mask-icon" href="favicon/safari-pinned-tabv2.svg" color="#5bbad5">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="src/styles/style.min.css">
+  <link rel="stylesheet" href="dist/css/style.min.css">
   <script src="https://use.fontawesome.com/09930796c2.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -27,19 +27,23 @@
   <div class="container">
     <div class="background"></div>
     <div class="contents">
-      <p>My name is Bobby, I'm a web developer.</p>
-      <p>Holler at me.</p>
-      <div class="links">
-        <a href="bobby_smith.pdf"><i class="fa fa-file-text-o" aria-hidden="true"></i></a>
-        <a href="https://github.com/bobbysmith"><i class="fa fa-code" aria-hidden="true"></i></a>
-        <a href="mailto:hello@bobbysmith.io"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+      <div class="contents__about">
+        <p>My name is Bobby, I'm a web developer.</p>
+        <p>Holler at me.</p>
+        <div class="links">
+          <a href="bobby_smith.pdf"><i class="fa fa-file-text-o" aria-hidden="true"></i></a>
+          <a href="https://github.com/bobbysmith"><i class="fa fa-code" aria-hidden="true"></i></a>
+          <a href="mailto:hello@bobbysmith.io"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="contents__automata">
+        <p class="rule"></p>
+        <p class="new-rule">
+          Click <button class="new-rule__button">here</button> to generate a new cellular automata.
+        </p>
       </div>
     </div>
-    <div class="automata">
-      <div class="rule"></div>
-      <div class="new-rule">Click <button class="new-rule__button">here</button> to generate a new cellular automata.</div>
-    </div>
   </div>
-  <script src="src/scripts/script.min.js"></script>
+  <script src="dist/scripts/script.js"></script>
 </body>
 </html>

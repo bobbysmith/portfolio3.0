@@ -53,7 +53,7 @@ body {
         color: $offwhite;
 
         &:last-of-type {
-          margin-bottom: 1.2em;
+          margin-bottom: 0.6em;
         }
 
         @media (max-width: 407px) {
@@ -67,11 +67,15 @@ body {
         justify-content: space-between;
 
         a {
-          transition: color 350ms ease;
-          color: $offwhite;
+          svg {
+            fill: $offwhite;
+            height: 1em;
+            width: 1em;
+            transition: fill 350ms ease;
 
-          &:hover {
-            color: $hover;
+            &:hover {
+              fill: $hover;
+            }
           }
         }
       }

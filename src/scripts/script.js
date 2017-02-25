@@ -96,3 +96,5 @@ function toggleActive(cell, isActive) {
 
 generateAutomata();
 newRuleButton.addEventListener('click', generateAutomata);
+
+console.log(' _____ _____ __    __    _____\n' + '|  |  |   __|  |  |  |  |     |\n' + '|     |   __|  |__|  |__|  |  |\n' + '|__|__|_____|_____|_____|_____|');

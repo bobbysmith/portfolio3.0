@@ -15,26 +15,30 @@ function generateAutomata() {
   row.setAttribute('class', 'row');
   background.appendChild(row);
 
-  for(let i = 1; i < background.clientWidth / 8; i++) {
+  for (let i = 1; i < background.clientWidth / 8; i++) {
     let div = document.createElement('div');
     row.appendChild(div);
   }
 
   randomizeRow(row);
+
   for (let i = 1; i < background.clientHeight / 8; i++) {
     duplicateRow();
   }
 };
 
-function numbertoBooleanArray(num) {
+function numberToBooleanArray(num) {
   let binary = Number(num).toString(2);
   let arr = [];
-  while(binary.length < 8) {
+
+  while (binary.length < 8) {
     binary = 0 + binary;
   }
-  for(let i = 0; i < binary.length; i++) {
+
+  for (let i = 0; i < binary.length; i++) {
     arr.push(parseInt(binary[i]) ? true : false);
   }
+
   return arr;
 }
 
@@ -43,7 +47,7 @@ function binary() {
 }
 
 function randomizeRow(row) {
-  for(let i = 0; i < row.childNodes.length; i++) {
+  for (let i = 0; i < row.childNodes.length; i++) {
     let div = row.childNodes[i];
     div.classList.add(binary() ? 'active' : 'inactive' );
   }
@@ -54,6 +58,7 @@ function duplicateRow() {
   let lastRow = rows[rows.length - 1];
   let clone = lastRow.cloneNode(true);
   document.querySelector('.background').appendChild(clone);
+
   processRow(clone, lastRow);
 }
 
@@ -66,7 +71,7 @@ function processRow(row, parentRow) {
     let toggleClass = setActiveIfMatchesRule.bind(null, target, left, parent, right);
 
     for (let j = 0; j < rulesIcon.length; j++) {
-      toggleClass(rulesIcon[j], numbertoBooleanArray(ruleNumber)[j]);
+      toggleClass(rulesIcon[j], numberToBooleanArray(ruleNumber)[j]);
     }
   }
 }
@@ -74,7 +79,7 @@ function processRow(row, parentRow) {
 function setActiveIfMatchesRule(target, left, parent, right, rule, ruleValue) {
   let matchesRule = state(left) === rule[0] && state(parent) === rule[1] && state(right) === rule[2];
 
-  if(matchesRule) {
+  if (matchesRule) {
     toggleActive(target, ruleValue);
   }
 }

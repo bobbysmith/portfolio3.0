@@ -22,7 +22,7 @@ function generateAutomata() {
   randomizeRow(row);
 
   for (let i = 1; i < background.clientHeight / 8; i++) {
-    setTimeout(duplicateRow, i * 25);
+    setTimeout(duplicateRow, i * 35);
   }
 };
 

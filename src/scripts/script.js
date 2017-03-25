@@ -5,7 +5,6 @@ const newRuleButton = document.querySelector('.new-rule__button');
 const rulesIcon = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
 let ruleNumber;
 
-
 function generateAutomata() {
   ruleNumber = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
   background.innerHTML = '';
@@ -23,7 +22,7 @@ function generateAutomata() {
   randomizeRow(row);
 
   for (let i = 1; i < background.clientHeight / 8; i++) {
-    duplicateRow();
+    setTimeout(duplicateRow, i * 25);
   }
 };
 
@@ -42,14 +41,10 @@ function numberToBooleanArray(num) {
   return arr;
 }
 
-function binary() {
-  return Math.floor(Math.random() * 2);
-}
-
 function randomizeRow(row) {
   for (let i = 0; i < row.childNodes.length; i++) {
     let div = row.childNodes[i];
-    div.classList.add(binary() ? 'active' : 'inactive' );
+    div.classList.add(Math.floor(Math.random() * 2) ? 'active' : 'inactive' );
   }
 }
 

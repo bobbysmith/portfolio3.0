@@ -11,7 +11,7 @@ let ruleNumber;
 function generateAutomata() {
   ruleNumber = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
   background.innerHTML = '';
-  ruleSet.innerHTML = `The background was generated using cellular automaton <a href="http://atlas.wolfram.com/01/01/${ruleNumber}/">rule ${ruleNumber}</a>.`;
+  ruleSet.innerHTML = `<a href="http://atlas.wolfram.com/01/01/${ruleNumber}/">rule ${ruleNumber}</a>`;
 
   let row = document.createElement('div');
   row.setAttribute('class', 'row');
@@ -33,7 +33,7 @@ function generateAutomata() {
  * Converts the rule set number into an array of booleans representing the rule set's binary representation.
  *
  * @param {Number} num The rule set number.
- * @returns {Array} Array of boolean values representing the rule set number in binary, ex. 2 === 10 === [true, false].
+ * @returns {Array} Array of boolean values representing the rule set number in binary, ex. 2 => 10 => [true, false].
  */
 function numberToBooleanArray(num) {
   let binary = Number(num).toString(2);
@@ -144,3 +144,4 @@ generateAutomata();
 newRuleButton.addEventListener('click', generateAutomata);
 
 console.log(` _____ _____ __    __    _____\n|  |  |   __|  |  |  |  |     |\n|     |   __|  |__|  |__|  |  |\n|__|__|_____|_____|_____|_____|`);
+console.log('i see you like poking around in the dev console, me too.\nlet\'s work together.');

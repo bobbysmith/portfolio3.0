@@ -48,15 +48,15 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 2rem 5%;
+    padding: 1rem 5%;
     overflow: hidden;
 
     &__about {
       display: flex;
       flex-direction: column;
+      font-size: 1rem;
 
       p {
-        font-size: 1rem;
         line-height: 1.8;
         color: $offwhite;
 
@@ -90,11 +90,11 @@ body {
     }
 
     &__automata {
-      font-size: .65rem;
+      font-size: .75rem;
       line-height: 1.8;
       color: $hover;
       font-family: 'Office Code Pro', monospace;
-      min-width: 25rem;
+      min-width: 28.375rem;
       text-align: left;
 
       .rule {
@@ -125,17 +125,21 @@ body {
         }
       }
 
-      @media (max-width: 440px) {
+      @media (max-width: 463px) {
+        font-size: .6rem;
+      }
+
+      @media (max-width: 371px) {
         font-size: .52rem;
       }
     }
 
-    @media (max-width: 875px) {
+    @media (max-width: 940px) {
       flex-direction: column;
     }
 
-    @media (max-width: 345px) {
-      padding: 2em 1%;
+    @media (max-width: 504px) {
+      padding: 1em 1%;
     }
   }
 }

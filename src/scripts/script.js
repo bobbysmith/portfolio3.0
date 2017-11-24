@@ -13,12 +13,12 @@ function generateAutomata() {
   background.innerHTML = '';
   ruleSet.innerHTML = `<a href="http://atlas.wolfram.com/01/01/${ruleNumber}/">rule ${ruleNumber}</a>`;
 
-  let row = document.createElement('div');
+  const row = document.createElement('div');
   row.setAttribute('class', 'row');
   background.appendChild(row);
 
   for (let i = 1; i < background.clientWidth / 8; i++) {
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     row.appendChild(div);
   }
 
@@ -37,7 +37,7 @@ function generateAutomata() {
  */
 function numberToBooleanArray(num) {
   let binary = Number(num).toString(2);
-  let arr = [];
+  const arr = [];
 
   while (binary.length < 8) {
     binary = 0 + binary;
@@ -57,7 +57,7 @@ function numberToBooleanArray(num) {
  */
 function randomizeRow(row) {
   for (let i = 0; i < row.childNodes.length; i++) {
-    let div = row.childNodes[i];
+    const div = row.childNodes[i];
     div.classList.add(Math.floor(Math.random() * 2) ? 'active' : 'inactive' );
   }
 }
@@ -66,9 +66,9 @@ function randomizeRow(row) {
  * Duplicates the previous row and processes the cells of that row based on the last row (its parent).
  */
 function duplicateRow() {
-  let rows = document.querySelectorAll('.row');
-  let lastRow = rows[rows.length - 1];
-  let clone = lastRow.cloneNode(true);
+  const rows = document.querySelectorAll('.row');
+  const lastRow = rows[rows.length - 1];
+  const clone = lastRow.cloneNode(true);
   document.querySelector('.background').appendChild(clone);
   processRow(clone, lastRow);
 }
@@ -81,11 +81,11 @@ function duplicateRow() {
  */
 function processRow(row, parentRow) {
   for (let i = 0; i < row.childNodes.length; i++) {
-    let target = row.childNodes[i];
-    let parent = parentRow.childNodes[i];
-    let left = parent.previousElementSibling || parentRow.childNodes[parentRow.childNodes.length - 1];
-    let right = parent.nextElementSibling || parentRow.childNodes[0];
-    let toggleClass = setActiveIfMatchesRule.bind(null, target, left, parent, right);
+    const target = row.childNodes[i];
+    const parent = parentRow.childNodes[i];
+    const left = parent.previousElementSibling || parentRow.childNodes[parentRow.childNodes.length - 1];
+    const right = parent.nextElementSibling || parentRow.childNodes[0];
+    const toggleClass = setActiveIfMatchesRule.bind(null, target, left, parent, right);
 
     for (let j = 0; j < rulesIcon.length; j++) {
       toggleClass(rulesIcon[j], numberToBooleanArray(ruleNumber)[j]);
@@ -104,7 +104,7 @@ function processRow(row, parentRow) {
  * @param {boolean} ruleValue The boolean representation from the rule set binary digit.
  */
 function setActiveIfMatchesRule(target, left, parent, right, rule, ruleValue) {
-  let matchesRule = state(left) === rule[0] && state(parent) === rule[1] && state(right) === rule[2];
+  const matchesRule = state(left) === rule[0] && state(parent) === rule[1] && state(right) === rule[2];
 
   if (matchesRule) {
     toggleActive(target, ruleValue);

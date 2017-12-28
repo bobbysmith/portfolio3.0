@@ -11,7 +11,7 @@ let ruleNumber;
 function generateAutomata() {
   ruleNumber = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
   background.innerHTML = '';
-  ruleSet.innerHTML = `<a href="http://atlas.wolfram.com/01/01/${ruleNumber}/">rule ${ruleNumber}</a>`;
+  ruleSet.innerHTML = `<a href="http://atlas.wolfram.com/01/01/${ruleNumber}/" target="_blank" rel="noopener noreferrer">rule ${ruleNumber}</a>`;
 
   const row = document.createElement('div');
   row.setAttribute('class', 'row');

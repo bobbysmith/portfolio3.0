@@ -1,8 +1,8 @@
 const background = document.querySelector('.background');
 const row = document.querySelector('.row');
-const ruleSet = document.querySelector('.rule');
+const ruleSetNumber = document.querySelector('.rule');
 const newRuleButton = document.querySelector('.new-rule__button');
-const rulesIcon = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
+const rulesLegend = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
 let ruleNumber;
 
 /**
@@ -11,7 +11,7 @@ let ruleNumber;
 function generateAutomata() {
   ruleNumber = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
   background.innerHTML = '';
-  ruleSet.innerHTML = `<a href="http://atlas.wolfram.com/01/01/${ruleNumber}/" target="_blank" rel="noopener noreferrer">rule ${ruleNumber}</a>`;
+  ruleSetNumber.innerHTML = `<a href="http://atlas.wolfram.com/01/01/${ruleNumber}/" target="_blank" rel="noopener noreferrer">rule ${ruleNumber}</a>`;
 
   const row = document.createElement('div');
   row.setAttribute('class', 'row');
@@ -37,17 +37,17 @@ function generateAutomata() {
  */
 function numberToBooleanArray(num) {
   let binary = Number(num).toString(2);
-  const arr = [];
+  const booleanArray = [];
 
   while (binary.length < 8) {
     binary = 0 + binary;
   }
 
   for (let i = 0; i < binary.length; i++) {
-    arr.push(parseInt(binary[i]) ? true : false);
+    booleanArray.push(parseInt(binary[i]) ? true : false);
   }
 
-  return arr;
+  return booleanArray;
 }
 
 /**
@@ -69,7 +69,7 @@ function duplicateRow() {
   const rows = document.querySelectorAll('.row');
   const lastRow = rows[rows.length - 1];
   const clone = lastRow.cloneNode(true);
-  document.querySelector('.background').appendChild(clone);
+  background.appendChild(clone);
   processRow(clone, lastRow);
 }
 
@@ -87,8 +87,8 @@ function processRow(row, parentRow) {
     const right = parent.nextElementSibling || parentRow.childNodes[0];
     const toggleClass = setActiveIfMatchesRule.bind(null, target, left, parent, right);
 
-    for (let j = 0; j < rulesIcon.length; j++) {
-      toggleClass(rulesIcon[j], numberToBooleanArray(ruleNumber)[j]);
+    for (let j = 0; j < rulesLegend.length; j++) {
+      toggleClass(rulesLegend[j], numberToBooleanArray(ruleNumber)[j]);
     }
   }
 }
@@ -104,7 +104,7 @@ function processRow(row, parentRow) {
  * @param {boolean} ruleValue The boolean representation from the rule set binary digit.
  */
 function setActiveIfMatchesRule(target, left, parent, right, rule, ruleValue) {
-  const matchesRule = state(left) === rule[0] && state(parent) === rule[1] && state(right) === rule[2];
+  const matchesRule = (state(left) === rule[0]) && (state(parent) === rule[1]) && (state(right) === rule[2]);
 
   if (matchesRule) {
     toggleActive(target, ruleValue);

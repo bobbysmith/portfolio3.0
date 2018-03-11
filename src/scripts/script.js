@@ -1,7 +1,7 @@
 const background = document.querySelector('.background');
 const row = document.querySelector('.row');
-const ruleSetNumber = document.querySelector('.rule');
-const newRuleButton = document.querySelector('.new-rule__button');
+const currentRule = document.querySelector('.rule--current');
+const newRuleButton = document.querySelector('button');
 const rulesLegend = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
 let ruleNumber;
 
@@ -11,7 +11,7 @@ let ruleNumber;
 function generateAutomata() {
   ruleNumber = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
   background.innerHTML = '';
-  ruleSetNumber.innerHTML = `<a href="http://atlas.wolfram.com/01/01/${ruleNumber}/" target="_blank" rel="noopener noreferrer">rule ${ruleNumber}</a>`;
+  currentRule.innerHTML = `<a href="http://atlas.wolfram.com/01/01/${ruleNumber}/" target="_blank" rel="noopener noreferrer">rule ${ruleNumber}</a>`;
 
   const row = document.createElement('div');
   row.setAttribute('class', 'row');

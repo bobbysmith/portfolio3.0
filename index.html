@@ -25,10 +25,10 @@
   <title>Bobby Smith</title>
 </head>
 <body>
-  <div class="container">
+  <main>
     <div class="background"></div>
     <div class="contents">
-      <div class="contents__about">
+      <div class="about">
         <p>My name is Bobby. I'm a software engineer.</p>
         <p>Holler at me.</p>
         <div class="links">
@@ -64,14 +64,14 @@
           </a>
         </div>
       </div>
-      <div class="contents__automata">
-        <p>The background was generated using cellular automaton <span class="rule"></span>.</p>
-        <p class="new-rule">
-          Click <button class="new-rule__button">here</button> to generate a new cellular automaton background.
+      <div class="rule">
+        <p>The background was generated using cellular automaton <span class="rule--current"></span>.</p>
+        <p class="rule--new">
+          Click <button>here</button> to generate a new cellular automaton background.
         </p>
       </div>
     </div>
-  </div>
+  </main>
   <script src="dist/scripts/script.js"></script>
 </body>
 </html>

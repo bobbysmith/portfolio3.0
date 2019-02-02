@@ -142,4 +142,17 @@ main {
       }
     }
   }
+
+  .space {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    color: $offwhite;
+    font-size: .75rem;
+    letter-spacing: -1px;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
 }

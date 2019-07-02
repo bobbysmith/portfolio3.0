@@ -68,29 +68,17 @@ main {
         color: $offwhite;
         line-height: 1.8;
 
-        &:last-of-type {
-          margin-bottom: .6rem;
-        }
-
         @media (max-width: 440px) {
           font-size: .85rem;
         }
-      }
 
-      .links {
-        display: flex;
-        justify-content: space-between;
-        width: 3.25rem;
-
-        a {
-          svg {
-            fill: $offwhite;
-            height: 1rem;
-            transition: fill 350ms ease;
-            width: 1rem;
+        &.links {
+          a {
+            color: $offwhite;
+            transition: color 350ms ease;
 
             &:hover {
-              fill: $hover;
+              color: $hover;
             }
           }
         }
@@ -140,18 +128,6 @@ main {
       @media (max-width: 371px) {
         font-size: .52rem;
       }
-    }
-  }
-
-  .space {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    color: $offwhite;
-    font-size: .75rem;
-
-    @media (max-width: 600px) {
-      display: none;
     }
   }
 }

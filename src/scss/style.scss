@@ -41,36 +41,27 @@ main {
 
   .contents {
     box-sizing: border-box;
-    display: flex;
     height: 100vh;
-    justify-content: space-between;
     left: 0;
     overflow: hidden;
-    padding: 1rem 5%;
+    padding: 4rem;
     position: absolute;
     top: 0;
     width: 100%;
 
-    @media (max-width: 990px) {
-      flex-direction: column;
-    }
-
-    @media (max-width: 504px) {
-      padding: 1em 1%;
+    @media (max-width: 414px) {
+      padding: 1%;
     }
 
     .about {
       display: flex;
       flex-direction: column;
-      font-size: 1rem;
+      margin-bottom: .5rem;
 
       p {
         color: $offwhite;
-        line-height: 1.8;
-
-        @media (max-width: 440px) {
-          font-size: .85rem;
-        }
+        font-size: 1.25em;
+        line-height: 1.4;
 
         &.links {
           a {
@@ -89,8 +80,7 @@ main {
       color: $hover;
       font-family: 'Office Code Pro', monospace;
       font-size: .75rem;
-      line-height: 1.8;
-      min-width: 28.375rem;
+      line-height: 1.4;
       text-align: left;
 
       &--current {
@@ -119,14 +109,6 @@ main {
             cursor: pointer;
           }
         }
-      }
-
-      @media (max-width: 463px) {
-        font-size: .6rem;
-      }
-
-      @media (max-width: 371px) {
-        font-size: .52rem;
       }
     }
   }

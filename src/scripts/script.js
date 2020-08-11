@@ -2,7 +2,7 @@ const background = document.querySelector('.background');
 const row = document.querySelector('.row');
 const currentRule = document.querySelector('.rule--current');
 const newRuleButton = document.querySelector('button');
-const rulesLegend = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
+const rulesGrid = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
 let ruleNumber;
 
 /**
@@ -17,13 +17,17 @@ function generateAutomata() {
   row.setAttribute('class', 'row');
   background.appendChild(row);
 
+  // Fill row with cells
   for (let i = 1; i < background.clientWidth / 8; i++) {
-    const div = document.createElement('div');
-    row.appendChild(div);
+    row.appendChild(document.createElement('div'));
   }
 
-  randomizeRow(row);
+  // Randomize row
+  for (let i = 0; i < row.childNodes.length; i++) {
+    row.childNodes[i].classList.add(Math.floor(Math.random() * 2) ? 'active' : 'inactive' );
+  }
 
+  // Duplicate rows to fill window
   for (let i = 1; i < background.clientHeight / 8; i++) {
     duplicateRow();
   }
@@ -51,18 +55,6 @@ function numberToBooleanArray(num) {
 }
 
 /**
- * Adds a class to each div in the row of either active or inactive.
- *
- * @param {HTML} row The non-classed generated row of divs based on clientWidth.
- */
-function randomizeRow(row) {
-  for (let i = 0; i < row.childNodes.length; i++) {
-    const div = row.childNodes[i];
-    div.classList.add(Math.floor(Math.random() * 2) ? 'active' : 'inactive' );
-  }
-}
-
-/**
  * Duplicates the previous row and processes the cells of that row based on the last row (its parent).
  */
 function duplicateRow() {
@@ -87,8 +79,8 @@ function processRow(row, parentRow) {
     const right = parent.nextElementSibling || parentRow.childNodes[0];
     const toggleClass = setActiveIfMatchesRule.bind(null, target, left, parent, right);
 
-    for (let j = 0; j < rulesLegend.length; j++) {
-      toggleClass(rulesLegend[j], numberToBooleanArray(ruleNumber)[j]);
+    for (let j = 0; j < rulesGrid.length; j++) {
+      toggleClass(rulesGrid[j], numberToBooleanArray(ruleNumber)[j]);
     }
   }
 }
@@ -104,7 +96,11 @@ function processRow(row, parentRow) {
  * @param {boolean} ruleValue The boolean representation from the rule set binary digit.
  */
 function setActiveIfMatchesRule(target, left, parent, right, rule, ruleValue) {
-  const matchesRule = (state(left) === rule[0]) && (state(parent) === rule[1]) && (state(right) === rule[2]);
+  const matchesRule = (
+    cellState(left) === rule[0] &&
+    cellState(parent) === rule[1] &&
+    cellState(right) === rule[2]
+  );
 
   if (matchesRule) {
     toggleActive(target, ruleValue);
@@ -117,7 +113,7 @@ function setActiveIfMatchesRule(target, left, parent, right, rule, ruleValue) {
  * @param {object} cell A single cell in the row.
  * @returns {number} 1 for active cells, 0 for inactive cells.
  */
-function state(cell) {
+function cellState(cell) {
   return cell.classList.contains('active') ? 1 : 0;
 }
 

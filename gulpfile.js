@@ -8,14 +8,12 @@ const browserSync = require('browser-sync').create();
 
 const SRC = {
   scripts: 'src/scripts/*.js',
-  styles: 'src/scss/*.scss',
-  fonts: 'src/fonts/**.*'
+  styles: 'src/scss/*.scss'
 };
 
 const DIST = {
   scripts: 'dist/scripts',
-  styles: 'dist/css',
-  fonts: 'dist/fonts',
+  styles: 'dist/css'
 };
 
 gulp.task('browser-sync', ['styles', 'scripts'], () => {
@@ -35,11 +33,6 @@ gulp.task('styles', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('fonts', () => {
-  return gulp.src(SRC.fonts)
-    .pipe(gulp.dest(DIST.fonts));
-});
-
 gulp.task('scripts', () => {
   return gulp.src(SRC.scripts)
     .pipe(babel())
@@ -53,4 +46,4 @@ gulp.task('watch', () => {
   gulp.watch(SRC.styles, ['styles']);
 });
 
-gulp.task('default', ['browser-sync', 'styles', 'fonts', 'scripts', 'watch']);
+gulp.task('default', ['browser-sync', 'styles', 'scripts', 'watch']);

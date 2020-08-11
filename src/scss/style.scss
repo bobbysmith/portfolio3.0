@@ -1,5 +1,4 @@
 @import 'reset';
-@import 'fonts';
 @import 'colors';
 
 html {
@@ -8,7 +7,7 @@ html {
 
 body {
   background: $active;
-  font-family: 'Office Code Pro', monospace;
+  font-family: 'Roboto Mono', monospace;
 }
 
 main {
@@ -61,7 +60,7 @@ main {
       p {
         color: $offwhite;
         font-size: 1.25em;
-        line-height: 1.4;
+        line-height: 1.2;
 
         &.links {
           a {
@@ -69,7 +68,7 @@ main {
             transition: color 350ms ease;
 
             &:hover {
-              color: $hover;
+              color: $light-gray;
             }
           }
         }
@@ -77,10 +76,10 @@ main {
     }
 
     .rule {
-      color: $hover;
-      font-family: 'Office Code Pro', monospace;
+      color: $light-gray;
+      font-family: 'Roboto Mono', monospace;
       font-size: .75rem;
-      line-height: 1.4;
+      line-height: 1.2;
       text-align: left;
 
       &--current {
@@ -89,7 +88,7 @@ main {
           transition: color 350ms ease;
 
           &:hover {
-            color: $hover;
+            color: $light-gray;
           }
         }
       }
@@ -99,13 +98,13 @@ main {
           background: transparent;
           border: none;
           color: $offwhite;
-          font-family: 'Office Code Pro', monospace;
+          font-family: 'Roboto Mono', monospace;
           font-size: inherit;
           padding: 0;
           transition: color 350ms ease;
 
           &:hover {
-            color: $hover;
+            color: $light-gray;
             cursor: pointer;
           }
         }

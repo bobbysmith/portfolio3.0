@@ -12,6 +12,9 @@ body {
 
 main {
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .background {
     height: 100vh;
@@ -40,17 +43,13 @@ main {
 
   .contents {
     box-sizing: border-box;
-    height: 100vh;
-    left: 0;
     overflow: hidden;
-    padding: 4rem;
+    padding: 8%;
     position: absolute;
-    top: 0;
-    width: 100%;
 
-    @media (max-width: 414px) {
-      padding: 1%;
-    }
+    // @media (max-width: 414px) {
+    //   padding: 1%;
+    // }
 
     .about {
       display: flex;

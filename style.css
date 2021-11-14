@@ -1,26 +1,26 @@
 :root {
-  --active-color: #191919;
-  --inactive-color: #26292C;
+  --active: #191919;
+  --inactive: #26292C;
   --off-white: #FEFEFE;
   --light-gray: #B8C1C1;
 }
 
 *,::after,::before{box-sizing:border-box;margin:0;padding:0}
-body,main .background .row div.active{background:var(--active-color)}
+body,main .background .row div.active{background:var(--active)}
 body,main .contents .rule,main .contents .rule--new button{font-family:'Roboto Mono',monospace}
 html{font-size:16px}
 main{overflow:hidden;display:flex;align-items:center;justify-content:center}
-main .background{height:100vh;position:relative;top:-6px;width:101vw}
+main .background{height:100vh;position:relative;top:-.5em;width:101vw}
 main .background .row{height:.5rem}
 main .background .row div{display:inline-block;height:.5rem;width:.5rem}
-main .background .row div.inactive{background:var(--inactive-color)}
+main .background .row div.inactive{background:var(--inactive)}
 main .contents{box-sizing:border-box;overflow:hidden;padding:8%;position:absolute}
 main .contents .about{display:flex;flex-direction:column;margin-bottom:.5rem}
-main .contents .about p{color:var(--off-white);font-size:1.25em;line-height:1.2}
+main .contents .about p{color:var(--off-white);font-size:1.5em;line-height:1.2}
 main .contents .about p.links a{color:var(--off-white);transition:color 350ms ease}
 main .contents .about p.links a:hover{color:var(--light-gray)}
-main .contents .rule{color:var(--light-gray);font-size:.75rem;line-height:1.2;text-align:left}
+main .contents .rule{color:var(--light-gray);font-size:1rem;line-height:1.5;text-align:left}
 main .contents .rule--current a{color:var(--off-white);transition:color 350ms ease}
 main .contents .rule--current a:hover{color:var(--light-gray)}
-main .contents .rule--new button{background:0 0;border:none;color:var(--off-white);font-size:inherit;padding:0;transition:color 350ms ease}
-main .contents .rule--new button:hover{color:var(--light-gray);cursor:pointer}
+main .contents .rule--new button{background: var(--off-white);color: var(--active);border: 1px solid var(--active);border-radius: .25em;padding: 0 .125em;margin-right: .25em;font-size:inherit;transition:all 350ms ease}
+main .contents .rule--new button:hover{color:var(--light-gray);border-color:var(--light-gray);background: transparent;cursor:pointer}

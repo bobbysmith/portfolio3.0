@@ -1,12 +1,14 @@
+const RULES_GRID = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
 const background = document.querySelector('.background');
 const row = document.querySelector('.row');
 const currentRule = document.querySelector('.rule--current');
 const newRuleButton = document.querySelector('button');
-const rulesGrid = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
 let ruleNumber;
 
 /**
  * Generates cellular automata based on a random rule set from 0 to 255.
+ *
+ * @returns {undefined}
  */
 function generateAutomata() {
   ruleNumber = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
@@ -31,7 +33,7 @@ function generateAutomata() {
   for (let i = 1; i < background.clientHeight / 8; i++) {
     duplicateRow();
   }
-};
+}
 
 /**
  * Converts the rule set number into an array of booleans representing the rule set's binary representation.
@@ -56,6 +58,8 @@ function numberToBooleanArray(num) {
 
 /**
  * Duplicates the previous row and processes the cells of that row based on the last row (its parent).
+ *
+ * @returns {undefined}
  */
 function duplicateRow() {
   const rows = document.querySelectorAll('.row');
@@ -70,17 +74,18 @@ function duplicateRow() {
  *
  * @param {HTML} row The new row being generated.
  * @param {HTML} parentRow The parent row which the new row is being based on.
+ * @returns {undefined}
  */
 function processRow(row, parentRow) {
   for (let i = 0; i < row.childNodes.length; i++) {
     const target = row.childNodes[i];
     const parent = parentRow.childNodes[i];
+    for (let j = 0; j < RULES_GRID.length; j++) {
     const left = parent.previousElementSibling || parentRow.childNodes[parentRow.childNodes.length - 1];
     const right = parent.nextElementSibling || parentRow.childNodes[0];
     const toggleClass = setActiveIfMatchesRule.bind(null, target, left, parent, right);
 
-    for (let j = 0; j < rulesGrid.length; j++) {
-      toggleClass(rulesGrid[j], numberToBooleanArray(ruleNumber)[j]);
+      toggleClass(RULES_GRID[j], numberToBooleanArray(ruleNumber)[j]);
     }
   }
 }
@@ -94,6 +99,7 @@ function processRow(row, parentRow) {
  * @param {object} right The right sibling of the parent cell of the target.
  * @param {number} rule The individual digit from the rule set being followed.
  * @param {boolean} ruleValue The boolean representation from the rule set binary digit.
+ * @returns {undefined}
  */
 function setActiveIfMatchesRule(target, left, parent, right, rule, ruleValue) {
   const matchesRule = (
@@ -122,6 +128,7 @@ function cellState(cell) {
  *
  * @param {object} cell The individual div in a row.
  * @param {boolean} isActive True or false depending on the binary digit in the rule set.
+ * @returns {undefined}
  */
 function toggleActive(cell, isActive) {
   if (isActive) {

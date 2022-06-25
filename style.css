@@ -7,7 +7,7 @@
 
 *,::after,::before{box-sizing:border-box;margin:0;padding:0}
 body,main .background .row div.active{background:var(--active)}
-body,main .contents .rule,main .contents .rule--new button{font-family:'Roboto Mono',monospace}
+body,main .contents .rule,main .contents .rule--new button{font-family:monospace}
 html{font-size:16px}
 main{overflow:hidden;display:flex;align-items:center;justify-content:center}
 main .background{height:100vh;position:relative;top:-.5em;width:101vw}
@@ -22,5 +22,5 @@ main .contents .about p.links a:hover{color:var(--light-gray)}
 main .contents .rule{color:var(--light-gray);font-size:1rem;line-height:1.9;text-align:left}
 main .contents .rule--current a{color:var(--off-white);transition:color 350ms ease}
 main .contents .rule--current a:hover{color:var(--light-gray)}
-main .contents .rule--new button{background: transparent;color: var(--light-gray);border: 1px solid var(--light-gray);border-radius: .25em;padding: 0 .125em;margin-right: .25em;font-size:inherit;transition:all 350ms ease}
+main .contents .rule--new button{background: transparent;color: var(--light-gray);border: 1px solid var(--light-gray);border-radius: .25em;padding: .0625em .25em;margin-right: .25em;font-size:inherit;transition:all 350ms ease}
 main .contents .rule--new button:hover{background: var(--off-white);color:var(--active);border-color:var(--active);cursor:pointer}

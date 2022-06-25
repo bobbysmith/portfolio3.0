@@ -81,9 +81,9 @@ function processRow(row, parentRow) {
     const target = row.childNodes[i];
     const parent = parentRow.childNodes[i];
     for (let j = 0; j < RULES_GRID.length; j++) {
-    const left = parent.previousElementSibling || parentRow.childNodes[parentRow.childNodes.length - 1];
-    const right = parent.nextElementSibling || parentRow.childNodes[0];
-    const toggleClass = setActiveIfMatchesRule.bind(null, target, left, parent, right);
+      const left = parent.previousElementSibling || parentRow.childNodes[parentRow.childNodes.length - 1];
+      const right = parent.nextElementSibling || parentRow.childNodes[0];
+      const toggleClass = setActiveIfMatchesRule.bind(null, target, left, parent, right);
 
       toggleClass(RULES_GRID[j], numberToBooleanArray(ruleNumber)[j]);
     }

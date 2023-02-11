@@ -12,7 +12,7 @@ let ruleNumber;
  * @returns {undefined}
  */
 function generateAutomata() {
-  ruleNumber = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+  ruleNumber = Math.floor(Math.random() * 256);
   background.innerHTML = '';
   currentRule.innerHTML = `<a href="http://atlas.wolfram.com/01/01/${ruleNumber}/" target="_blank" rel="noopener noreferrer">rule ${ruleNumber}</a>`;
 
@@ -51,7 +51,7 @@ function numberToBooleanArray(num) {
   }
 
   for (let i = 0; i < binary.length; i++) {
-    booleanArray.push(parseInt(binary[i]) ? true : false);
+    booleanArray.push(!!parseInt(binary[i]));
   }
 
   return booleanArray;
@@ -85,7 +85,6 @@ function processRow(row, parentRow) {
       const left = parent.previousElementSibling || parentRow.childNodes[parentRow.childNodes.length - 1];
       const right = parent.nextElementSibling || parentRow.childNodes[0];
       const toggleClass = setActiveIfMatchesRule.bind(null, target, left, parent, right);
-
       toggleClass(RULES_GRID[j], numberToBooleanArray(ruleNumber)[j]);
     }
   }

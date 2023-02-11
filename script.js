@@ -1,4 +1,5 @@
 const RULES_GRID = [[1,1,1], [1,1,0], [1,0,1], [1,0,0], [0,1,1], [0,1,0], [0,0,1], [0,0,0]];
+const States = { ACTIVE: 'active', INACTIVE: 'inactive' };
 const background = document.querySelector('.background');
 const row = document.querySelector('.row');
 const currentRule = document.querySelector('.rule--current');
@@ -26,7 +27,7 @@ function generateAutomata() {
 
   // Randomize row
   for (let i = 0; i < row.childNodes.length; i++) {
-    row.childNodes[i].classList.add(Math.floor(Math.random() * 2) ? 'active' : 'inactive' );
+    row.childNodes[i].classList.add(Math.floor(Math.random() * 2) ? States.ACTIVE : States.INACTIVE );
   }
 
   // Duplicate rows to fill window
@@ -120,7 +121,7 @@ function setActiveIfMatchesRule(target, left, parent, right, rule, ruleValue) {
  * @returns {number} 1 for active cells, 0 for inactive cells.
  */
 function cellState(cell) {
-  return cell.classList.contains('active') ? 1 : 0;
+  return cell.classList.contains(States.ACTIVE) ? 1 : 0;
 }
 
 /**
@@ -132,11 +133,11 @@ function cellState(cell) {
  */
 function toggleActive(cell, isActive) {
   if (isActive) {
-    cell.classList.remove('inactive');
-    cell.classList.add('active');
+    cell.classList.remove(States.INACTIVE);
+    cell.classList.add(States.ACTIVE);
   } else {
-    cell.classList.remove('active');
-    cell.classList.add('inactive');
+    cell.classList.remove(States.ACTIVE);
+    cell.classList.add(States.INACTIVE);
   }
 }
 

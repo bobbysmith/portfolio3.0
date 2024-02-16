@@ -148,4 +148,4 @@ newRuleButton.addEventListener('click', generateAutomata);
 
 // Dev console stuff.
 console.log(` _____ _____ __    __    _____\n|  |  |   __|  |  |  |  |     |\n|     |   __|  |__|  |__|  |  |\n|__|__|_____|_____|_____|_____|`);
-console.log('i see you like poking around in the dev console. i do too.\nlet\'s work together.');
+console.log('I see you like poking around in the dev console.\nI do too.\nLet\'s work together.\nSend me an email at hello@bobbysmith.io');
